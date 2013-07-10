@@ -4,3 +4,4 @@ for(int i=0; i<1; i++){
 	count++;
 }
 System.out.println(count);
+System.out.println("test");
