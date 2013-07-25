@@ -1,0 +1,33 @@
+<?php
+   require_once ("db.php");
+   require_once ("initialise.php");
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Email:Login</title>
+		<link href="../css/css1.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id = "header">Simple AJAX Email Application</div>
+		<div class = "menu">
+		</div>
+		<div class = "content1">
+		<h2>Login</h2>
+        <!--Upon submit, it sends the page to validate.php, to check whether the login details match the details of the SQL server-->
+        <form action = "./validate.php" method="POST">
+          <p>
+            <label for="username"> Username </label>
+            <input  type="text" name="username" id="username"/>
+          </p>
+          <p>
+            <label for="password"> Password</label>
+            <input type="text" name="password" id="password"/>
+          </p>
+          <p>
+            <input type="Submit" value="Login"/>
+          </p>
+        </form></div>
+		<div class = "content2"></div>
+	</body>
+</html>

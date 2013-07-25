@@ -1,0 +1,25 @@
+var request = new XMLHttpRequest();
+function getMessage(event){
+	var message = "Inbox";
+	var url = "../php/message.php";
+	request.onreadystatechange = processResult;
+	request.open("POST", url, true);
+	alert(url);
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	request.send("messageType="+message);
+}
+
+function processResult(){
+	if (request.readyState == 4){
+		if (request.status == 200){
+			var response = request.responseText;
+			var div = document.getElementById("content1");
+			div.innerHTML = response;
+			alert("andZZZZZZZZZZZ");
+		} else {
+			alert("Error processing request:\n" + request.statusText);
+		}
+	} else {
+		alert(request.readyState);
+		}	
+}
