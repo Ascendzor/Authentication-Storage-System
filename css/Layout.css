@@ -59,6 +59,49 @@ background-color: #CEE3F6;
 height: 650px;
 }
 
+.inputSection{
+margin-bottom: 15px;
+}
+
+.displayLabel{
+width: 160px;
+height: 40px;
+font-size: 14px;
+font-weight: bold;
+line-height: 40px;
+float:left;
+}
+
+.inputTextbox{
+width: 400px;
+height: 30px;
+font-size: 16px;
+line-height: 40px;
+}
+
+.clearButton{
+background-color: #008fc5;
+width: 120px;
+height: 40px;
+float: left;
+color: #FFFFFF;
+font-size: 27px;
+text-align: center;
+margin-left: 160px;
+padding-top:8px;
+}
+
+.submitButton{
+background-color: #008fc5;
+width: 120px;
+height: 40px;
+color: #FFFFFF;
+font-size: 27px;
+text-align: center;
+margin-left: 442px;
+padding-top:8px;
+}
+
 #footer{
 float: bottom;
 padding: 10px;

@@ -37,7 +37,24 @@ function menuItemClicked(id){
 
 //called when the addData menu item is clicked
 function addData(){
-	var content = "<p>space for adding account details to the database</p>";
+	var content = "<form>";
+	content += "<label class='displayLabel'> Project Name </label>";
+	content += "<div class='inputSection'>";
+	content += "<input id='projectName' type='text' class='inputTextbox'>";
+	content += "</div>";
+	content += "<div class='inputSection'>";
+	content += "<label class='displayLabel'> Username </label>";
+	content += "<input id='username' type='text' class='inputTextbox'>";
+	content += "</div>";
+	content += "<div class='inputSection'>";
+	content += "<label class='displayLabel'> Password </label>";
+	content += "<input id='password' type='text' class='inputTextbox'>";
+	content += "</div>";
+	content += "<div class='inputSection'>";
+	content += "<div class='clearButton'> Clear </div>";
+	content += "<div type='submit' class='submitButton'> Submit </div>";
+	content += "</div>";
+	content += "</form>";
 	document.getElementById("content").innerHTML = content;
 }
 
