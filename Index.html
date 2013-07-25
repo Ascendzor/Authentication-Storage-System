@@ -11,9 +11,9 @@
 <div id="container">
 	<div id="header"><img src="images/enlighten-logo.png"><p></p></div>
 	<div id="menu">
-		<div class="menuItem" onClick="addData();">Add to database</div>
-		<div class="menuItem" onClick="searchData();">Search</div>
-		<div class="menuItem" onClick="help();">Help</div>
+		<div id="addData" class="menuItem" onClick="addData();" onmouseover="highlight('addData');" onmouseout="lowlight('addData');">Add to database</div>
+		<div id="searchData" class="menuItem" onClick="searchData();" onmouseover="highlight('searchData');" onmouseout="lowlight('searchData');">Search</div>
+		<div id="help" class="menuItem" onClick="help();" onmouseover="highlight('help');" onmouseout="lowlight('help');">Help</div>
 	</div>
 	<div id="content"><p>Text content goes here</p></div>
 	<div id="footer"><p>Footer goes here</p></div>

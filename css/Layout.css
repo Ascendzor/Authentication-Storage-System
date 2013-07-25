@@ -11,6 +11,15 @@ margin-top: 15px;
 color:#FFF;
 padding:10px;
 }
+
+.highlightedMenuItem{
+background-color:#CEE3F6;
+margin-bottom:10px;
+margin-top: 15px;
+color:#FFF;
+padding:10px;
+}
+
 #container{
 margin-left:auto;
 margin-right:auto;

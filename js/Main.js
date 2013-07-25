@@ -6,6 +6,14 @@ function initialize(){
 	var anotherExample = "hi";
 }
 
+function highlight(id){
+	document.getElementById(id).className = "highlightedMenuItem";
+}
+
+function lowlight(id){
+	document.getElementById(id).className = "menuItem";
+}
+
 function addData(){
 	console.log("Adding to database!!!");
 }
