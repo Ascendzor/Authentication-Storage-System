@@ -1,4 +1,7 @@
-/* background images: http://subtlepatterns.com/page/9/*/
+/*
+References:
+background images: http://subtlepatterns.com/page/9/
+*/
 body{
 background:url("../images/use_your_illusion.png");
 background-repeat:repeat;
@@ -7,8 +10,9 @@ background-repeat:repeat;
 .menuItem{
 margin-bottom:10px;
 margin-top: 15px;
-color:#FFF;
-padding:10px;
+color: #FFF;
+padding: 10px;
+cursor: pointer;
 }
 
 .menuItemIdle{
