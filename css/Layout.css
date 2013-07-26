@@ -5,6 +5,7 @@ background images: http://subtlepatterns.com/page/9/
 body{
 background:url("../images/use_your_illusion.png");
 background-repeat:repeat;
+font-family: arial;
 }
 
 .menuItem{
@@ -47,7 +48,7 @@ float:left;
 padding:25px;
 padding-top: 0px;
 padding-bottom:20px;
-width:130px;
+width:150px;
 height: 650px;
 }
 

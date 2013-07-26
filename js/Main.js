@@ -5,7 +5,6 @@ function initialize(){
 //called when a menu item is clicked
 function menuItemClicked(id){
 	var lastClicked = $('.menuItemClicked').get();
-	console.log(lastClicked);
 	for(var i=0; i<lastClicked.length; i++){
 		document.getElementById(lastClicked[i].id).className = "menuItem menuItemIdle";
 	}
@@ -106,6 +105,6 @@ function searchContent(){
 
 //called when the help menu item is clicked
 function help(){
-	var content = "<p>space for advice and demonstrations on how to use this program</p>";
+	var content = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>";
 	document.getElementById("content").innerHTML = content;
 }
