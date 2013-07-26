@@ -19,6 +19,11 @@ function menuItemClicked(id){
 	}
 }
 
+
+function pingTestPhp(){
+	 console.log("asdf");
+}
+
 //called when the addData menu item is clicked
 function addData(){
 	var content = "<form>";
