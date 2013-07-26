@@ -1,7 +1,7 @@
 <?php
    $sql_server = "webcloud45.au.syrahost.com";
-   $db_username = "optimald";
-   $db_password = "Foodroptable01";
+   $db_username = "optimald_testuse";
+   $db_password = "testpass";
    $db_name = "optimald_testdatabase";
 
    mysql_connect($sql_server, $db_username, $db_password);
