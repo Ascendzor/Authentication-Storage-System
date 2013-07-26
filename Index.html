@@ -4,6 +4,7 @@
 <head>
 <title>account manager</title>
 <script src="js/Main.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="css/Layout.css">
 </head>
 
@@ -11,9 +12,9 @@
 <div id="container">
 	<div id="header"><img src="images/enlighten-logo.png"><p></p></div>
 	<div id="menu">
-		<div id="addData" class="menuItem" onClick="menuItemClicked('addData');" onmouseover="highlight('addData');" onmouseout="lowlight('addData');">Add to database</div>
-		<div id="searchData" class="menuItem" onClick="menuItemClicked('searchData');" onmouseover="highlight('searchData');" onmouseout="lowlight('searchData');">Search</div>
-		<div id="help" class="menuItem" onClick="menuItemClicked('help');" onmouseover="highlight('help');" onmouseout="lowlight('help');">Help</div>
+		<div id="addData" class="menuItem menuItemIdle" onClick="menuItemClicked('addData');">Add to database</div>
+		<div id="searchData" class="menuItem menuItemIdle" onClick="menuItemClicked('searchData');">Search</div>
+		<div id="help" class="menuItem menuItemIdle" onClick="menuItemClicked('help');">Help</div>
 	</div>
 	<div id="content"></div>
 	<div id="footer"><p>Footer goes here</p></div>

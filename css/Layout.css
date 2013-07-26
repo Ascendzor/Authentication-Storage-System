@@ -5,27 +5,22 @@ background-repeat:repeat;
 }
 
 .menuItem{
+margin-bottom:10px;
+margin-top: 15px;
+color:#FFF;
+padding:10px;
+}
+
+.menuItemIdle{
 background-color:#008fc5;
-margin-bottom:10px;
-margin-top: 15px;
-color:#FFF;
-padding:10px;
 }
 
-.highlightedMenuItem{
+.menuItem:hover{
 background-color:#CEE3F6;
-margin-bottom:10px;
-margin-top: 15px;
-color:#FFF;
-padding:10px;
 }
 
-.selectedMenuItem{
+.menuItemClicked{
 background-color:#104E8B;
-margin-bottom:10px;
-margin-top: 15px;
-color:#FFF;
-padding:10px;
 }
 
 #container{
@@ -102,10 +97,63 @@ margin-left: 442px;
 padding-top:8px;
 }
 
+.contentDivider{
+margin-left: 10px;
+margin-bottom: 30px;
+width: 900px;
+}
+
+.labelDisplay{
+float: left;
+width: 160px;
+height: 20px;
+line-height: 26px;
+vertical-align: text-middle;
+}
+
+.textInput{
+height: 20px;
+width: 400px;
+float: left;
+}
+
+.submitSearch{
+width:80px;
+height: 26px;
+color: #FFF;
+line-height: 26px;
+margin-left: 590px;
+text-align: center;
+background-color:#104E8B;
+}
+
 #footer{
 float: bottom;
 padding: 10px;
 background-color: #6E6E6E;
 color:#FFF;
 text-align: right;
+}
+
+table{
+border-collapse: collapse;
+border: solid;
+border-width: 1px;
+border-color: #104E8B
+}
+
+.tableHead{
+style='font-weight:bold;
+border:solid;
+border-width: 1px;
+border-color:#104E8B;
+}
+
+.highLightedRow{
+background-color:#104E8B;
+width: 50px;
+}
+
+td{
+width: 300px;
 }
