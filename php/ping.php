@@ -1,5 +1,4 @@
 <?php
-
-echo "asdf";
-
+	echo "asdf";
+	mysql_ping();
 ?>
