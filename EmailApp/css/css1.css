@@ -46,6 +46,14 @@ font-family: Times;
 font-size: 20pt;
 }
 
+#searchTableRow{
+background-color: transparent;
+}
+
+#searchTableRow.hover{
+background-color: #FFF;
+}
+
 /*Replaces the existing tah th, table header cells, creating a solid/1px/white border, aligning the cells to the top, and aligning text to the left*/
 th{
 	border: solid 1px white;

@@ -33,15 +33,15 @@ function addData(){
 	var content = "<form>";
 	content += "<label class='displayLabel'> Project Name </label>";
 	content += "<div class='inputSection'>";
-	content += "<input id='projectName' type='text' class='inputTextbox'>";
+	content += "<input id='projectName' type='text' class='addTextBox'>";
 	content += "</div>";
 	content += "<div class='inputSection'>";
 	content += "<label class='displayLabel'> Username </label>";
-	content += "<input id='username' type='text' class='inputTextbox'>";
+	content += "<input id='username' type='text' class='addTextBox'>";
 	content += "</div>";
 	content += "<div class='inputSection'>";
 	content += "<label class='displayLabel'> Password </label>";
-	content += "<input id='password' type='text' class='inputTextbox'>";
+	content += "<input id='password' type='text' class='addTextBox'>";
 	content += "</div>";
 	content += "<div class='inputSection'>";
 	content += "<div class='clearButton'> Clear </div>";
@@ -51,19 +51,11 @@ function addData(){
 	document.getElementById("content").innerHTML = content;
 }
 
-function rowHighlight(id){
-	document.getElementById("row"+id).style.background = "#FFF";
-}
-
-function rowLowlight(id){
-	document.getElementById("row"+id).style.background = "";
-}
-
 var keywords = [];
 var usernames = [];
 var passwords = [];
 function search(){
-	var keywordToSearch = document.getElementById("textboxKeyword");
+	var keywordToSearch = document.getElementById("searchTextbox");
 	//query the database using keywordToSearch as the keyword and store the values in their respective array
 	
 	/* DUMMY DATA */
@@ -93,7 +85,7 @@ function search(){
 	content += "</tr>";
 
 	for(var i=0; i<keywords.length; i++){
-		content += "<tr id='row"+i+"' onmouseover='rowHighlight("+i+")' onmouseout='rowLowlight("+i+")'>";
+		content += "<tr id='row"+i+"' class='searchTableRow'>";
 		content += "<td>"+keywords[i] + "</td><td>" + usernames[i] + "</td><td>" + passwords[i] + "</td>";
 		content += "</tr>";
 	}
@@ -105,9 +97,8 @@ function search(){
 //called when the searchData menu item is clicked
 function searchContent(){
 	var content = "<div class='contentDivider'>";
-	content += "<label class='labelDisplay'> Keyword </label>";
-	content += "<input type='text' id='textboxKeyword' class='textInput'>";
-	content += "<div id='searchSubmit' class='submitSearch' onmousedown='search();'> Search </div>";
+	content += "<input type='text' id='searchTextbox' class='searchTextbox'>";
+	content += "<div id='searchSubmit' onmousedown='search();'> Search </div>";
 	content += "<div id='tableSection' class='contentDivider'></div>";
 	document.getElementById("content").innerHTML = content;
 }
