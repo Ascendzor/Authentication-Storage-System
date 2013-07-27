@@ -32,23 +32,23 @@ background-color:#104E8B;
 margin-left:auto;
 margin-right:auto;
 width:98%;
-background-color:#A4A4A4;
 }
 
 #header{
 padding:30px;
 background-color:#FFF;
-margin-bottom:1px;
+border-bottom: 1px solid #333;
 }
 
 #menu{
 /*background-color:#008fc5;*/
-background-color:#FFF;
-float:left;
-padding:25px;
+background-color: #FFF;
+border-right: 1px solid #333;
+float: left;
+padding: 25px;
 padding-top: 0px;
-padding-bottom:20px;
-width:150px;
+padding-bottom: 20px;
+width: 150px;
 height: 650px;
 }
 
@@ -135,7 +135,7 @@ background-color:#104E8B;
 #footer{
 float: bottom;
 padding: 10px;
-background-color: #6E6E6E;
+background-color: #22333e;
 color:#FFF;
 text-align: right;
 }
