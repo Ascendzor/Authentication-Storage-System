@@ -21,7 +21,11 @@ function menuItemClicked(id){
 
 
 function pingTestPhp(){
-	 console.log("asdf");
+	ajaxRequest("./php/ping.php", "POST", "", true, pingHandle);
+}
+
+function pingHandle(result){
+	console.log(result);
 }
 
 //called when the addData menu item is clicked

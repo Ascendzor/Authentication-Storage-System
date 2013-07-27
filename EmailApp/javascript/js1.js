@@ -39,6 +39,7 @@ function deleteMessage(){
 			}		
 		}
 	}
+	
 	//Loop through all the checked checkboxes, and add the result to messageID variable, separated by comma.
 	for (var i = 0; i < checkBoxArray.length; i++){
 		messageID = messageID+checkBoxArray[i].value+",";
