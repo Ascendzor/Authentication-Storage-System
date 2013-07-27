@@ -1,5 +1,0 @@
-<?php
-$messageNew = $_POST['messageNew'];
-
-echo $messageNew;
-?>
