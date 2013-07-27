@@ -31,7 +31,7 @@ background-color:#104E8B;
 #container{
 margin-left:auto;
 margin-right:auto;
-width:98%;
+width:1000px;
 }
 
 #header{
@@ -80,26 +80,28 @@ line-height: 40px;
 }
 
 .clearButton{
-background-color: #008fc5;
-width: 120px;
-height: 40px;
+background-color: #104E8B;
+cursor: pointer;
+width: 80px;
+height: 26px;
 float: left;
-color: #FFFFFF;
-font-size: 27px;
+color: #FFF;
+line-height: 26px;
 text-align: center;
-margin-left: 160px;
-padding-top:8px;
+margin-left: 369px;
+padding: 3px;
 }
 
 .submitButton{
-background-color: #008fc5;
-width: 120px;
-height: 40px;
-color: #FFFFFF;
-font-size: 27px;
+background-color: #104E8B;
+cursor: pointer;
+width: 80px;
+height: 26px;
+color: #FFF;
+line-height: 26px;
 text-align: center;
-margin-left: 442px;
-padding-top:8px;
+margin-left: 477px;
+padding: 3px;
 }
 
 .contentDivider{
@@ -120,7 +122,7 @@ vertical-align: text-middle;
 
 .searchTextbox{
 height: 20px;
-width: 800px;
+width: 575px;
 float: left;
 }
 
@@ -130,9 +132,10 @@ height: 26px;
 cursor: pointer;
 color: #FFF;
 line-height: 26px;
-margin-left: 820px;
+margin-left: 626px;
 text-align: center;
 background-color:#104E8B;
+padding:2px;
 }
 
 #footer{
@@ -151,7 +154,7 @@ border-color: #104E8B
 }
 
 .tableHead{
-style='font-weight:bold;
+font-weight:bold;
 border:solid;
 border-width: 1px;
 border-color:#104E8B;
@@ -162,5 +165,5 @@ background-color: #FFF;
 }
 
 td{
-width: 300px;
+width: 235px;
 }
