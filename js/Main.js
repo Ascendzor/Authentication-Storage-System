@@ -45,10 +45,25 @@ function addData(){
 	content += "</div>";
 	content += "<div class='inputSection'>";
 	content += "<div class='clearButton'> Clear </div>";
-	content += "<div type='submit' class='submitButton'> Submit </div>";
+	content += "<div id='submitButton' onmousedown='submitDetailsButton()' type='submit' class='submitButton'> Submit </div>";
 	content += "</div>";
 	content += "</form>";
 	document.getElementById("content").innerHTML = content;
+}
+
+function submitDetailsButton(){
+	var projectToSubmit = document.getElementById("projectName").value;
+	var usernameToSubmit = document.getElementById("username").value;
+	var passwordToSubmit = document.getElementById("password").value;
+	
+	ajaxRequest("./php/submitDetails.php", "POST", 
+	"project="+projectToSubmit+"&username="+usernameToSubmit+"&password="+passwordToSubmit, true, tester);
+	
+	
+}
+
+function tester(result){
+	console.log(result);
 }
 
 var keywords = [];
@@ -56,7 +71,9 @@ var usernames = [];
 var passwords = [];
 var accountDetails = [];
 function search(){
-	var keywordToSearch = document.getElementById("searchTextbox");
+	var keywordToSearch = document.getElementById("searchTextbox").value;
+	
+	ajaxRequest("./php/get.php", "POST", "Keyword="+keywordToSearch, true, getHandle);
 	//query the database using keywordToSearch as the keyword and store the values in their respective array
 	
 	/* DUMMY DATA */
@@ -71,14 +88,6 @@ function search(){
 	keywords[2] = "Marcellion";
 	usernames[2] = "Is";
 	passwords[2] = "Sexy";
-	
-	//example of how it's going to properly be stored
-	accountDetails[0] = {keyword: "www.enlightenDesign.co.nz",
-							username: "lenEnlightenDesgins",
-							password: "1337h4x0r"}
-	
-	//example of how to access the properties
-	console.log("a keyword: " + accountDetails[0].keyword);
 	/* END OF DUMMY DATA */
 	
 	//delete the table before adding the new refreshed one
@@ -101,6 +110,12 @@ function search(){
 	content += "</table>";
 	content += "</div>";
 	document.getElementById("content").innerHTML = content;
+}
+
+//called when the Database is searched 
+function getHandle(result)
+{
+	console.log(result);
 }
 
 //called when the searchData menu item is clicked
