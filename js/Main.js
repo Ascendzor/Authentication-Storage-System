@@ -51,19 +51,29 @@ function addData(){
 	document.getElementById("content").innerHTML = content;
 }
 
+
+/*Called from clicking the submit button within the add to database page*/
 function submitDetailsButton(){
+
+	/*get user input from text boxes*/
+>>>>>>> ef6edf28211098a0ddf8dd284e6b4d597354f4d0
 	var projectToSubmit = document.getElementById("projectName").value;
 	var usernameToSubmit = document.getElementById("username").value;
 	var passwordToSubmit = document.getElementById("password").value;
 	
+	/*issue php to insert user input into database*/
 	ajaxRequest("./php/submitDetails.php", "POST", 
-	"project="+projectToSubmit+"&username="+usernameToSubmit+"&password="+passwordToSubmit, true, tester);
-	
+	"project="+projectToSubmit+"&username="+usernameToSubmit+"&password="+passwordToSubmit, true, handleSubmitResponse);
 	
 }
 
-function tester(result){
-	console.log(result);
+/*Handle response from the submitDetails php*/
+function handleSubmitResponse(result){
+	if (result == "1"){
+		console.log("submitDetails sql success");
+	}else{
+		console.log("submitDetails sql fail");
+	}
 }
 
 var keywords = [];
