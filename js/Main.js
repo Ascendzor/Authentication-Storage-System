@@ -44,14 +44,14 @@ function addData(){
 	content += "<input id='password' type='text' class='addTextBox'>";
 	content += "</div>";
 	content += "<div class='inputSection'>";
-	content += "<div class='clearButton'> Clear </div>";
+	content += "<div id='clearSubmitDetailsButton' onmousedown='clearSubmitDetailsButton()' class='clearButton'> Clear </div>";
 	content += "<div id='submitButton' onmousedown='submitDetailsButton()' type='submit' class='submitButton'> Submit </div>";
 	content += "</div>";
 	content += "</form>";
 	document.getElementById("content").innerHTML = content;
 }
 
-/*Called from clicking the submit button within the add to database page*/
+/*Called from clicking the submit button within the add to database page, submits user input to database*/
 function submitDetailsButton(){
 
 	/*get user input from text boxes*/
@@ -63,6 +63,13 @@ function submitDetailsButton(){
 	ajaxRequest("./php/submitDetails.php", "POST", 
 	"project="+projectToSubmit+"&username="+usernameToSubmit+"&password="+passwordToSubmit, true, handleSubmitResponse);
 	
+}
+
+/*Called from clicking the clear button within the add to database page, clears user input from text boxes*/
+function clearSubmitDetailsButton(){
+	document.getElementById("projectName").value = "";
+	document.getElementById("username").value = "";
+	document.getElementById("password").value = "";
 }
 
 /*Handle response from the submitDetails php*/
