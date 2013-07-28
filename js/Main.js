@@ -45,10 +45,33 @@ function addData(){
 	content += "</div>";
 	content += "<div class='inputSection'>";
 	content += "<div class='clearButton'> Clear </div>";
-	content += "<div type='submit' class='submitButton'> Submit </div>";
+	content += "<div id='submitButton' onmousedown='submitDetailsButton()' type='submit' class='submitButton'> Submit </div>";
 	content += "</div>";
 	content += "</form>";
 	document.getElementById("content").innerHTML = content;
+}
+
+/*Called from clicking the submit button within the add to database page*/
+function submitDetailsButton(){
+
+	/*get user input from text boxes*/
+	var projectToSubmit = document.getElementById("projectName").value;
+	var usernameToSubmit = document.getElementById("username").value;
+	var passwordToSubmit = document.getElementById("password").value;
+	
+	/*issue php to insert user input into database*/
+	ajaxRequest("./php/submitDetails.php", "POST", 
+	"project="+projectToSubmit+"&username="+usernameToSubmit+"&password="+passwordToSubmit, true, handleSubmitResponse);
+	
+}
+
+/*Handle response from the submitDetails php*/
+function handleSubmitResponse(result){
+	if (result == "1"){
+		console.log("submitDetails sql success");
+	}else{
+		console.log("submitDetails sql fail");
+	}
 }
 
 var keywords = [];
