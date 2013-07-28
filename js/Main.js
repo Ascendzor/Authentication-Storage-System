@@ -54,6 +54,7 @@ function addData(){
 var keywords = [];
 var usernames = [];
 var passwords = [];
+var accountDetails = [];
 function search(){
 	var keywordToSearch = document.getElementById("searchTextbox");
 	//query the database using keywordToSearch as the keyword and store the values in their respective array
@@ -70,6 +71,14 @@ function search(){
 	keywords[2] = "Marcellion";
 	usernames[2] = "Is";
 	passwords[2] = "Sexy";
+	
+	//example of how it's going to properly be stored
+	accountDetails[0] = {keyword: "www.enlightenDesign.co.nz",
+							username: "lenEnlightenDesgins",
+							password: "1337h4x0r"}
+	
+	//example of how to access the properties
+	console.log("a keyword: " + accountDetails[0].keyword);
 	/* END OF DUMMY DATA */
 	
 	//delete the table before adding the new refreshed one
