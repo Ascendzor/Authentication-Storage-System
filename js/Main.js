@@ -51,7 +51,6 @@ function addData(){
 	document.getElementById("content").innerHTML = content;
 }
 
-
 /*Called from clicking the submit button within the add to database page*/
 function submitDetailsButton(){
 
@@ -75,53 +74,55 @@ function handleSubmitResponse(result){
 	}
 }
 
-var keywords = [];
-var usernames = [];
-var passwords = [];
-var accountDetails = [];
+
 function search(){
 	var keywordToSearch = document.getElementById("searchTextbox").value;
-	
 	ajaxRequest("./php/get.php", "POST", "Keyword="+keywordToSearch, true, handleSearchResponse);
 }
 
 //called when the Database is searched 
 function handleSearchResponse(result){
+    var accountDetails = [];
 	//take last character off so there's no # at the end which screws up splitting
-	result = result.substring(0, result.length-1);
+	//result = result.substring(0, result.length-1);
 	
 	//split by #
 	var accounts = result.split("#");
 	
 	//populate the accounts object with the results
-	for(var i=0; i<accounts.length; i++){
+	for(var i=0; i<accounts.length-1; i++){
 		var details = accounts[i].split(",");
-		accountDetails[i] = {keyword: details[0],
-								username: details[1],
-								password: details[2]};
+		accountDetails[i] = {id: details[0],
+                                keyword: details[1],
+								username: details[2],
+								password: details[3]};
 	}
 	
 	//remove old table to stop table stacking
 	var table = document.getElementById("tableSection");
 	table.parentNode.removeChild(table);
 	
+    // Store value of searchtextbox to populate searchbox after changing content.
+    var searchTextBoxValue = document.getElementById("searchTextbox").value;
+    
 	//grab all of the content then add a table populated with the results of the query to the content in the form of a table
 	var content = document.getElementById("content").innerHTML;
 	content += "<div id='tableSection' class='contentDivider'>";
 	content += "<table>";
 	content += "<tr class='tableHead'>";
-	content += "<td>Keyword</td><td>Username</td><td>Password</td>";
+	content += "<td class='searchTableCells'>Keyword</td><td class='searchTableCells'>Username</td><td class='searchTableCells'>Password</td><td class='searchDeleteColumn'></td>";
 	content += "</tr>";
 	
 	//create a row for each accountDetail
 	for(var i=0; i<accountDetails.length; i++){
 		content += "<tr id='row"+i+"' class='searchTableRow'>";
-		content += "<td>"+ accountDetails[i].keyword + "</td><td>" + accountDetails[i].username + "</td><td>" + accountDetails[i].password + "</td>";
+		content += "<td class='searchTableCells'>"+ accountDetails[i].keyword + "</td><td class='searchTableCells'>" + accountDetails[i].username + "</td><td class='searchTableCells'>" + accountDetails[i].password + "</td><td id='delete" + i +"' class='searchDeleteColumn searchDeleteImage' onclick='deleteRowButton("+accountDetails[i].id+");' + ></td>";
 		content += "</tr>";
 	}
 	content += "</table>";
 	content += "</div>";
 	document.getElementById("content").innerHTML = content;
+    document.getElementById("searchTextbox").value = searchTextBoxValue;
 }
 
 //called when the searchData menu item is clicked
@@ -131,6 +132,21 @@ function searchContent(){
 	content += "<div id='searchSubmit' onmousedown='search();'> Search </div>";
 	content += "<div id='tableSection' class='contentDivider'></div>";
 	document.getElementById("content").innerHTML = content;
+}
+
+function deleteRowButton(id){
+    console.log("Delete row with id: "+id);
+    
+    ajaxRequest("./php/deleteDetails.php", "POST", "rowid="+id, true, deleteRowResponse);
+    search();
+}
+
+function deleteRowResponse(result){
+	if (result == "1"){
+		console.log("Delete Row sql success");
+	}else{
+		console.log("Delete Row sql fail");
+	}
 }
 
 //called when the help menu item is clicked

@@ -28,6 +28,20 @@ background-color:#CEE3F6;
 background-color:#104E8B;
 }
 
+.searchDeleteColumn{
+cursor: pointer;
+border-collapse: collapse;
+border: solid;
+border-width: 1px;
+border-color: #104E8B;
+width: 16px;
+}
+
+.searchDeleteImage{
+background:url("../images/delete_button.png");
+background-repeat:no-repeat;
+}
+
 #container{
 margin-left:auto;
 margin-right:auto;
@@ -153,6 +167,10 @@ border-width: 1px;
 border-color: #104E8B
 }
 
+.searchTableCells{
+width: 228px;
+}
+
 .tableHead{
 font-weight:bold;
 border:solid;
@@ -162,8 +180,4 @@ border-color:#104E8B;
 
 .searchTableRow:hover{
 background-color: #FFF;
-}
-
-td{
-width: 235px;
 }
