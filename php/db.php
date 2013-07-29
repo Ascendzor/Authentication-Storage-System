@@ -1,5 +1,5 @@
 <?php
-   $sql_server = "webcloud45.au.syrahost.com";
+   $sql_server = "localhost";
    $db_username = "optimald_testuse";
    $db_password = "testpass";
    $db_name = "optimald_testdatabase";

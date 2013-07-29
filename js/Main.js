@@ -56,7 +56,6 @@ function addData(){
 function submitDetailsButton(){
 
 	/*get user input from text boxes*/
->>>>>>> ef6edf28211098a0ddf8dd284e6b4d597354f4d0
 	var projectToSubmit = document.getElementById("projectName").value;
 	var usernameToSubmit = document.getElementById("username").value;
 	var passwordToSubmit = document.getElementById("password").value;
@@ -83,24 +82,26 @@ var accountDetails = [];
 function search(){
 	var keywordToSearch = document.getElementById("searchTextbox").value;
 	
-	ajaxRequest("./php/get.php", "POST", "Keyword="+keywordToSearch, true, getHandle);
-	//query the database using keywordToSearch as the keyword and store the values in their respective array
-	
-	/* DUMMY DATA */
-	keywords[0] = "www.enlightenDesigns.co.nz";
-	usernames[0] = "leEnlightenDesigns";
-	passwords[0] = "1337h4x0r";
-	
-	keywords[1] = "exampleKeyword";
-	usernames[1] = "exampleUsername";
-	passwords[1] = "examplePassword";
+	ajaxRequest("./php/get.php", "POST", "Keyword="+keywordToSearch, true, handleSearchResponse);
+}
 
-	keywords[2] = "Marcellion";
-	usernames[2] = "Is";
-	passwords[2] = "Sexy";
-	/* END OF DUMMY DATA */
+//called when the Database is searched 
+function handleSearchResponse(result){
+	//take last character off so there's no # at the end which screws up splitting
+	result = result.substring(0, result.length-1);
 	
-	//delete the table before adding the new refreshed one
+	//split by #
+	var accounts = result.split("#");
+	
+	//populate the accounts object with the results
+	for(var i=0; i<accounts.length; i++){
+		var details = accounts[i].split(",");
+		accountDetails[i] = {keyword: details[0],
+								username: details[1],
+								password: details[2]};
+	}
+	
+	//remove old table to stop table stacking
 	var table = document.getElementById("tableSection");
 	table.parentNode.removeChild(table);
 	
@@ -111,21 +112,16 @@ function search(){
 	content += "<tr class='tableHead'>";
 	content += "<td>Keyword</td><td>Username</td><td>Password</td>";
 	content += "</tr>";
-
-	for(var i=0; i<keywords.length; i++){
+	
+	//create a row for each accountDetail
+	for(var i=0; i<accountDetails.length; i++){
 		content += "<tr id='row"+i+"' class='searchTableRow'>";
-		content += "<td>"+keywords[i] + "</td><td>" + usernames[i] + "</td><td>" + passwords[i] + "</td>";
+		content += "<td>"+ accountDetails[i].keyword + "</td><td>" + accountDetails[i].username + "</td><td>" + accountDetails[i].password + "</td>";
 		content += "</tr>";
 	}
 	content += "</table>";
 	content += "</div>";
 	document.getElementById("content").innerHTML = content;
-}
-
-//called when the Database is searched 
-function getHandle(result)
-{
-	console.log(result);
 }
 
 //called when the searchData menu item is clicked
