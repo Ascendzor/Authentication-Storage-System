@@ -145,7 +145,6 @@ function deleteRowButton(id){
     console.log("Delete row with id: "+id);
     
     ajaxRequest("./php/deleteDetails.php", "POST", "rowid="+id, true, deleteRowResponse);
-    search();
 }
 
 function deleteRowResponse(result){
@@ -154,6 +153,7 @@ function deleteRowResponse(result){
 	}else{
 		console.log("Delete Row sql fail");
 	}
+    search();
 }
 
 //called when the help menu item is clicked
